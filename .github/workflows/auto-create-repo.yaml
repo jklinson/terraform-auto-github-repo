@@ -21,9 +21,13 @@ jobs:
 
     - name: Terraform Plan
       run: terraform plan -out=tfplan
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Terraform Apply
       run: terraform apply -auto-approve tfplan
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Output Terraform State
       run: terraform output
