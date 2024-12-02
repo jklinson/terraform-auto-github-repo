@@ -9,6 +9,7 @@
       "name": "my-repo-from-template",
       "description": "This repository is created from a template.",
       "private": true,
+      "isTemplate": false,
       "template": {
         "owner": "jklinson",
         "repository": "ts-lambda-terraform"
