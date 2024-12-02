@@ -3,6 +3,9 @@ name: Terraform GitHub Repository Creation
 on:
   workflow_dispatch:
 
+env:
+  GH_PAT: ${{ secrets.GH_PAT }}
+
 jobs:
   terraform:
     runs-on: ubuntu-latest
@@ -20,14 +23,11 @@ jobs:
       run: terraform init
 
     - name: Terraform Plan
-      run: terraform plan -out=tfplan
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: terraform plan -out=tfplan -var "github_token=${{ env.GH_PAT }}"
+      
 
     - name: Terraform Apply
-      run: terraform apply -auto-approve tfplan
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: terraform apply -auto-approve -var "github_token=${{ env.GH_PAT }}"
 
     - name: Output Terraform State
       run: terraform output
