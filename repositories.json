@@ -4,6 +4,15 @@
       "description": "This is the first repository created from terraform script.",
       "private": false,
       "isTemplate": true
+    },
+    {
+      "name": "my-repo-from-template",
+      "description": "This repository is created from a template.",
+      "private": true,
+      "template": {
+        "owner": "jklinson",
+        "repository": "ts-lambda-terraform"
+      }
     }
   ]
   
