@@ -3,6 +3,10 @@ name: Terraform GitHub Repository Creation
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+  actions: write
+
 env:
   GH_PAT: ${{ secrets.GH_PAT }}
 
