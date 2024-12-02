@@ -4,7 +4,6 @@ resource "github_repository" "repositories" {
   name        = each.value["name"]
   description = each.value["description"]
   private     = each.value["private"]
-  visibility  = each.value["visibility"]
   is_template = each.value["isTemplate"]
 
   # Ensure repository is not created if already exists

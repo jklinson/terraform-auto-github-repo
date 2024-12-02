@@ -2,8 +2,7 @@
     {
       "name": "my-sample-repo-created-from-tf-1",
       "description": "This is the first repository created from terraform script.",
-      "private": true,
-      "visibility": "private",
+      "private": false,
       "isTemplate": true
     }
   ]
